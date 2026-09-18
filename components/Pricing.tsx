@@ -41,7 +41,7 @@ export default function Pricing() {
               <div className="mt-auto">
                 <p className="text-sm font-medium">+ {plan.featured ? "R$ 250/mês" : "R$ 100/mês"}</p>
                 <p className="text-xs text-[#5F6368] mt-1">{plan.featured ? "Acompanhamento e relatórios trimestrais" : "Hospedagem e cuidado técnico"}</p>
-                <div className="mb-4"><CareDetails variant={plan.featured ? "full" : "basic"} /></div>
+                <div className="mb-4"><CareDetails /></div>
                 <a href={whatsappUrl(plan.message)} target="_blank" rel="noopener noreferrer" className={`${plan.featured ? "btn-primary-blue" : "btn-secondary-white"} block px-4 py-3.5 text-sm text-center`}>{plan.cta} →</a>
               </div>
             </article>
