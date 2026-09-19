@@ -167,3 +167,28 @@ h1, h2, h3, .font-heading {
   0%, 100% { opacity: 0; transform: scale(1); }
   50% { opacity: 0.45; transform: scale(1.45); }
 }
+
+/* Text Reveal: dark words (white → blue → black) */
+@keyframes textRevealDark {
+  0% { color: transparent; filter: blur(6px); }
+  30% { color: #3D6AFF; filter: blur(0px); }
+  100% { color: #111111; filter: blur(0px); }
+}
+
+/* Text Reveal: accent words (white → black → blue) */
+@keyframes textRevealAccent {
+  0% { color: transparent; filter: blur(6px); }
+  30% { color: #111111; filter: blur(0px); }
+  100% { color: #3D6AFF; filter: blur(0px); }
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Reduced motion: disable all custom animations */
+@media (prefers-reduced-motion: reduce) {
+  [style*="animation"] { animation: none !important; }
+}

@@ -2,6 +2,8 @@
 
 import { useRef, useState } from "react"
 import { contactEmail, whatsappUrl } from "@/lib/contact"
+import Reveal from "./ui/Reveal"
+import TextReveal from "./ui/TextReveal"
 
 const inputClass = "w-full border border-[#D5D9E1] rounded-xl px-3.5 py-3 mt-2 bg-white text-sm placeholder:text-[#858B96]"
 type FieldErrors = { nome?: string; contato?: string }
@@ -61,14 +63,15 @@ export default function ContactForm() {
   return (
     <section id="contato" className="py-16 md:py-20 bg-[#F7F9FD] border-t border-[var(--line-subtle)]">
       <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-12 gap-10 md:gap-16">
-        <div className="md:col-span-5">
+        <Reveal className="md:col-span-5">
           <p className="eyebrow">Seu próximo passo</p>
-          <h2 className="section-title">Vamos falar<br />do seu projeto?</h2>
+          <h2 className="section-title"><TextReveal>Vamos falar<br />do seu projeto?</TextReveal></h2>
           <p className="text-[#5F6368] mt-5 leading-relaxed max-w-sm">Me conte sua ideia. Eu ajudo a definir o formato e os próximos passos.</p>
           <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary-blue inline-block px-7 py-3.5 mt-7 text-sm">Conversar pelo WhatsApp →</a>
           <a className="block mt-5 text-xs text-[#5F6368] underline break-all" href={`mailto:${contactEmail}`}>{contactEmail}</a>
-        </div>
-        <form onSubmit={submit} noValidate className="md:col-span-7 space-y-4" aria-busy={status === "sending"}>
+        </Reveal>
+        <Reveal delay={200} className="md:col-span-7">
+        <form onSubmit={submit} noValidate className="space-y-4" aria-busy={status === "sending"}>
           <h3 className="font-heading text-lg font-semibold">Prefere deixar uma mensagem?</h3>
           <div className="grid sm:grid-cols-2 gap-4">
             <div>
@@ -98,6 +101,7 @@ export default function ContactForm() {
           <p role="status" aria-live="polite" className={`text-sm ${status === "error" ? "text-red-700" : "text-[#315CE6]"}`}>{message}</p>
           {status === "error" && <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="inline-block text-sm underline">Continuar pelo WhatsApp →</a>}
         </form>
+        </Reveal>
       </div>
     </section>
   )

@@ -1,5 +1,7 @@
 import { whatsappUrl } from "@/lib/contact"
 import CareDetails from "./CareDetails"
+import Reveal from "./ui/Reveal"
+import TextReveal from "./ui/TextReveal"
 
 const items = [
   ["Já tenho Instagram. Por que preciso de um site?", "O Instagram cria relacionamento. Seu site organiza serviços, projetos e contato em um endereço próprio, que recebe visitas de buscas, indicações e campanhas."],
@@ -16,18 +18,22 @@ export default function FAQ() {
   return (
     <section id="faq" className="py-16 md:py-20 border-t border-[var(--line-subtle)]">
       <div className="max-w-[1280px] mx-auto px-6 grid md:grid-cols-12 gap-9 md:gap-16">
-        <div className="md:col-span-4">
+        <Reveal className="md:col-span-4">
           <p className="eyebrow">Perguntas frequentes</p>
-          <h2 className="section-title">Antes<br className="hidden md:block" /> de começar.</h2>
+          <h2 className="section-title">
+            <TextReveal>Antes<br />de começar.</TextReveal>
+          </h2>
           <p className="text-sm text-[#5F6368] mt-4 leading-relaxed">O essencial para tirar seu projeto do papel.</p>
           <a href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="inline-block mt-6 text-sm text-[#3D6AFF] font-medium">Tirar outra dúvida →</a>
-        </div>
+        </Reveal>
         <div className="md:col-span-8 border-t border-[var(--line-subtle)]">
           {items.map(([question, answer], index) => (
-            <details key={question} name="faq" className="group border-b border-[var(--line-subtle)]">
-              <summary className="faq-summary flex justify-between items-center gap-5 py-5 cursor-pointer font-medium text-base">{question}<span aria-hidden="true" className="text-[#3D6AFF] text-xl shrink-0 group-open:rotate-45 transition-transform">+</span></summary>
-              <div className="pb-5 pr-5"><p className="text-sm text-[#5F6368] leading-relaxed">{answer}</p>{index === 6 && <CareDetails label="Ver as entregas de cada plano" />}</div>
-            </details>
+            <Reveal key={question} delay={index * 60}>
+              <details name="faq" className="group border-b border-[var(--line-subtle)]">
+                <summary className="faq-summary flex justify-between items-center gap-5 py-5 cursor-pointer font-medium text-base">{question}<span aria-hidden="true" className="text-[#3D6AFF] text-xl shrink-0 group-open:rotate-45 transition-transform">+</span></summary>
+                <div className="pb-5 pr-5"><p className="text-sm text-[#5F6368] leading-relaxed">{answer}</p>{index === 6 && <CareDetails label="Ver as entregas de cada plano" />}</div>
+              </details>
+            </Reveal>
           ))}
         </div>
       </div>

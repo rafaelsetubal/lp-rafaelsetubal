@@ -1,5 +1,7 @@
 import CareDetails from "./CareDetails"
 import { whatsappUrl } from "@/lib/contact"
+import Reveal from "./ui/Reveal"
+import TextReveal from "./ui/TextReveal"
 
 const plans = [
   {
@@ -21,15 +23,19 @@ export default function Pricing() {
     <section id="precos" className="py-16 md:py-24 border-t border-[var(--line-subtle)]">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid md:grid-cols-12 gap-6 items-end mb-12">
-          <div className="md:col-span-7">
+          <Reveal className="md:col-span-7">
             <p className="eyebrow">Investimento</p>
-            <h2 className="section-title">Quanto custa<br /><span className="text-[#3D6AFF]">um site?</span></h2>
-          </div>
-          <p className="md:col-span-5 max-w-md text-[#5F6368] leading-relaxed">Uma oferta em destaque ou sua empresa por completo. Escolha o formato para o seu momento.</p>
+            <h2 className="section-title">
+              <TextReveal>Quanto custa<br /><span className="text-[#3D6AFF]">um site?</span></TextReveal>
+            </h2>
+          </Reveal>
+          <Reveal className="md:col-span-5" delay={200}>
+            <p className="max-w-md text-[#5F6368] leading-relaxed">Uma oferta em destaque ou sua empresa por completo. Escolha o formato para o seu momento.</p>
+          </Reveal>
         </div>
         <div className="grid lg:grid-cols-12 gap-8 items-stretch">
-          {plans.map((plan) => (
-            <article key={plan.name} className={plan.featured ? "pricing-featured relative isolate lg:col-span-5 rounded-[24px] border border-[#B9CCFF] p-7 md:p-9 flex flex-col shadow-[0_16px_48px_rgba(61,106,255,0.10)]" : "lg:col-span-3 py-7 lg:py-9 flex flex-col"}>
+          {plans.map((plan, i) => (
+            <Reveal key={plan.name} as="article" delay={i * 200} className={plan.featured ? "pricing-featured relative isolate lg:col-span-5 rounded-[24px] border border-[#B9CCFF] p-7 md:p-9 flex flex-col shadow-[0_16px_48px_rgba(61,106,255,0.10)]" : "lg:col-span-3 py-7 lg:py-9 flex flex-col"}>
               {plan.featured && <span className="self-start mb-5 rounded-full bg-[#3D6AFF] px-3.5 py-1.5 text-[11px] font-medium text-white">Presença completa</span>}
               <h3 className="eyebrow !text-[#44516A]">{plan.name}</h3>
               <p className="text-xs text-[#5F6368]">Criação a partir de</p>
@@ -44,9 +50,9 @@ export default function Pricing() {
                 <div className="mb-4"><CareDetails /></div>
                 <a href={whatsappUrl(plan.message)} target="_blank" rel="noopener noreferrer" className={`${plan.featured ? "btn-primary-blue" : "btn-secondary-white"} block px-4 py-3.5 text-sm text-center`}>{plan.cta} →</a>
               </div>
-            </article>
+            </Reveal>
           ))}
-          <article className="lg:col-span-4 py-7 lg:py-9 lg:pl-5 flex flex-col border-t lg:border-t-0 border-[var(--line-subtle)]">
+          <Reveal as="article" delay={400} className="lg:col-span-4 py-7 lg:py-9 lg:pl-5 flex flex-col border-t lg:border-t-0 border-[var(--line-subtle)]">
             <h3 className="eyebrow">Projeto específico</h3>
             <p className="text-xs text-[#5F6368]">Para outras necessidades</p>
             <p className="font-heading font-semibold text-4xl tracking-tight mt-2">Sob consulta</p>
@@ -56,12 +62,14 @@ export default function Pricing() {
             </ul>
             <p className="text-sm leading-relaxed text-[#5F6368] mb-6">Escopo, investimento e acompanhamento definidos na proposta.</p>
             <a href={whatsappUrl("Olá, Rafael! Quero conversar sobre um projeto específico.")} target="_blank" rel="noopener noreferrer" className="btn-secondary-white block mt-auto px-4 py-3.5 text-sm text-center">Conversar sobre minha ideia →</a>
-          </article>
+          </Reveal>
         </div>
-        <div className="mt-9 pt-6 border-t border-[var(--line-subtle)] text-sm text-[#5F6368]">
-          <p><span className="font-medium text-[#111111]">Nos dois planos:</span> versão para celular, publicação e atendimento direto. Mensalidade obrigatória conforme o plano; domínio à parte.</p>
-          <p className="mt-3 text-xs leading-relaxed">* Prazos após materiais e aprovações: landing page até 7 dias; institucional de 2 a 4 semanas. Registro e renovação de domínio cobrados separadamente. Condições de cartão e parcelamento são combinadas na proposta.</p>
-        </div>
+        <Reveal delay={300}>
+          <div className="mt-9 pt-6 border-t border-[var(--line-subtle)] text-sm text-[#5F6368]">
+            <p><span className="font-medium text-[#111111]">Nos dois planos:</span> versão para celular, publicação e atendimento direto. Mensalidade obrigatória conforme o plano; domínio à parte.</p>
+            <p className="mt-3 text-xs leading-relaxed">* Prazos após materiais e aprovações: landing page até 7 dias; institucional de 2 a 4 semanas. Registro e renovação de domínio cobrados separadamente. Condições de cartão e parcelamento são combinadas na proposta.</p>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

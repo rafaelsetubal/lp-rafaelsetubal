@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Reveal from './ui/Reveal'
+import TextReveal from './ui/TextReveal'
 
 interface Evidence {
   id: string
@@ -98,16 +100,18 @@ export default function Experience() {
         
         {/* 1. HEADER EDITORIAL */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20 md:mb-24 items-start">
-          <div className="md:col-span-7 lg:col-span-8">
+          <Reveal className="md:col-span-7 lg:col-span-8">
             <span className="font-sans text-[0.72rem] md:text-[0.78rem] uppercase tracking-[0.16em] text-[#7F8792] font-medium block mb-5">
               Experiência em contextos reais
             </span>
             <h2 className="font-heading text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] font-semibold tracking-[-0.03em] leading-[1.0] text-[#111111]">
-              Projetos que fazem parte<br />
-              de <span className="text-[#3D6AFF]">negócios reais.</span>
+              <TextReveal>
+                Projetos que fazem parte<br />
+                de <span className="text-[#3D6AFF]">negócios reais.</span>
+              </TextReveal>
             </h2>
-          </div>
-          <div className="md:col-span-5 lg:col-span-4 md:pl-8 md:border-l md:border-[rgba(17,17,17,0.08)] mt-2 md:mt-10">
+          </Reveal>
+          <Reveal className="md:col-span-5 lg:col-span-4 md:pl-8 md:border-l md:border-[rgba(17,17,17,0.08)] mt-2 md:mt-10" delay={200}>
             <p className="font-sans text-sm md:text-base text-[#5F6368] font-normal leading-relaxed mb-6">
               Sites, produtos digitais e experiências que desenvolvi ou dos quais participei, em empresas de diferentes setores e escalas.
             </p>
@@ -118,7 +122,7 @@ export default function Experience() {
               Ver todas as referências 
               <span className="text-lg leading-none mb-[2px]">→</span>
             </Link>
-          </div>
+          </Reveal>
         </div>
 
         {/* 2. GRID DE EVIDÊNCIAS */}

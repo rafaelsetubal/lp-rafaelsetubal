@@ -5,6 +5,8 @@ import Image from "next/image"
 import { allProjects } from "@/lib/projects-data"
 
 import ProjectVideo from "./ProjectVideo"
+import Reveal from "./ui/Reveal"
+import TextReveal from "./ui/TextReveal"
 
 export default function PortfolioGallery() {
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null)
@@ -15,10 +17,10 @@ export default function PortfolioGallery() {
     <section id="portfolio" className="relative w-full py-16 md:py-20 bg-[#FBFBFB] border-t border-[var(--line-subtle)]">
       <div className="max-w-[1280px] mx-auto px-6">
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 pb-8 border-b border-[var(--line-subtle)]">
-          <div><p className="eyebrow">Portfólio selecionado</p><h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight">O trabalho fala por si.</h2></div>
+        <Reveal className="flex flex-col md:flex-row md:items-end justify-between gap-5 pb-8 border-b border-[var(--line-subtle)]">
+          <div><p className="eyebrow">Portfólio selecionado</p><h2 className="font-heading text-3xl sm:text-4xl font-semibold tracking-tight"><TextReveal>O trabalho fala por si.</TextReveal></h2></div>
           <p className="text-sm text-[#5F6368] max-w-[290px] md:text-right">{allProjects.length} projetos, diferentes negócios.<br />Explore as prévias abaixo.</p>
-        </div>
+        </Reveal>
         {/* ================= EDITORIAL 12-COLUMN PORTFOLIO GRID ================= */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-x-8 gap-y-12 md:gap-y-16 pt-9 md:pt-12">
           {displayedProjects.map((project, idx) => {
