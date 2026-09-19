@@ -14,6 +14,7 @@ interface Evidence {
   metric: string
   isGrowth?: boolean
   description: string
+  conversionNote?: string
   sourceText: string
   sourceUrl: string
   videoUrl?: string
@@ -46,15 +47,16 @@ const evidences: Evidence[] = [
   },
   {
     id: "03",
-    company: "Pride",
-    logos: ["/logos/PRIDE.png"],
-    actuation: "Site · Projeto digital",
-    metric: "R$ 535 milhões",
+    company: "Oxford Cove",
+    logos: ["/logos/oxford-cove.png"],
+    actuation: "Site · Landing page",
+    metric: "≈ R$ 420 milhões",
     isGrowth: true,
-    description: "em VGV e 2.200 unidades vendidas em 2025",
-    sourceText: "Bem Paraná",
-    sourceUrl: "https://www.bemparana.com.br/noticias/economia/pride-construtora-cresce-no-mercado-imobiliario-com-um-dos-melhores-anos-da-empresa/",
-    videoUrl: "/projects/video-optimized/pride.mp4"
+    description: "em vendas em duas horas",
+    conversionNote: "equivalente aproximado a DH 300 milhões",
+    sourceText: "Khaleej Times",
+    sourceUrl: "https://www.khaleejtimes.com/business-technology-review/iman-developers-sets-a-benchmark-with-the-sell-out-of-its-dh300-million-oxford-cove-in-just-two-hours",
+    videoUrl: "/projects/video-optimized/oxford-cove.mp4"
   },
   {
     id: "04",
@@ -298,6 +300,11 @@ function ExperienceCard({ item, isBottomRowDesktop, isLastInRowDesktop, isBottom
         <p className="font-sans text-sm text-[#5F6368] group-hover:text-white/80 max-md:group-data-[active=true]:text-white/80 transition-colors duration-500 leading-relaxed max-w-[90%]">
           {item.description}
         </p>
+        {item.conversionNote && (
+          <p className="font-sans text-[10px] text-[#8A8F98] group-hover:text-white/60 max-md:group-data-[active=true]:text-white/60 transition-colors duration-500 leading-relaxed mt-1.5">
+            {item.conversionNote}
+          </p>
+        )}
       </div>
 
       {/* Footer do item (Fonte + Número) */}
