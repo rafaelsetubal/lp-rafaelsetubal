@@ -267,7 +267,7 @@ function ExperienceCard({ item, isBottomRowDesktop, isLastInRowDesktop, isBottom
                 src={item.logos[0]} 
                 alt={item.company} 
                 fill 
-                className="object-contain object-left transition-all duration-500 group-hover:brightness-0 group-hover:invert max-md:group-data-[active=true]:brightness-0 max-md:group-data-[active=true]:invert"
+                className={`object-contain object-left transition-all duration-500 group-hover:brightness-0 group-hover:invert max-md:group-data-[active=true]:brightness-0 max-md:group-data-[active=true]:invert ${item.company === "Oxford Cove" ? "brightness-0 opacity-70 group-hover:opacity-100 max-md:group-data-[active=true]:opacity-100" : ""}`}
               />
             </div>
           ) : (
