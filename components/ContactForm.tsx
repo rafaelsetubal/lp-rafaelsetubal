@@ -51,6 +51,7 @@ export default function ContactForm() {
       }
       setStatus("success")
       setMessage("Mensagem enviada. Obrigado pelo contato!")
+      window.fbq?.("track", "Lead")
       form.reset()
     } catch {
       setStatus("error")

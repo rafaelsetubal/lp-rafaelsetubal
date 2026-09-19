@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Fustat, Inter_Tight } from "next/font/google"
 import Script from "next/script"
+import MetaPixel from "@/components/MetaPixel"
 import "./globals.css"
 
 const fustat = Fustat({
@@ -49,6 +50,7 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "ykhpfcjz0q");
           `}
         </Script>
+        <MetaPixel />
         {children}
       </body>
     </html>
