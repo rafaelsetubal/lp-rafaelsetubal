@@ -5,7 +5,7 @@ import TextReveal from "./ui/TextReveal"
 
 const items = [
   ["Já tenho Instagram. Por que preciso de um site?", "O Instagram cria relacionamento. Seu site organiza serviços, projetos e contato em um endereço próprio, que recebe visitas de buscas, indicações e campanhas."],
-  ["Meu site pode aparecer no Google e em buscas com IA?", "Páginas públicas e conteúdo claro criam condições para descoberta. Preparo a estrutura para facilitar essa leitura; posições e citações dependem de cada plataforma."],
+  ["Meu site pode aparecer no Google e no ChatGPT?", "Sim. Eu organizo o site para que mecanismos de busca entendam melhor sua empresa. A posição nos resultados depende da concorrência, do conteúdo e das regras de cada plataforma."],
   ["Landing page ou institucional: qual escolher?", "A landing page destaca uma oferta em uma página. O institucional apresenta sua empresa e seus serviços em até 5 páginas. Outros formatos são definidos sob consulta."],
   ["Quanto tempo leva?", "Até 7 dias para landing pages e de 2 a 4 semanas para institucionais, após receber os materiais combinados. O prazo depende do escopo e das aprovações."],
   ["Preciso fornecer textos e imagens?", "Eu oriento a organização do conteúdo. Combinamos os materiais, as responsabilidades e as revisões antes de começar."],

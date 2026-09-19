@@ -113,7 +113,7 @@ export default function Experience() {
           </Reveal>
           <Reveal className="md:col-span-5 lg:col-span-4 md:pl-8 md:border-l md:border-[rgba(17,17,17,0.08)] mt-2 md:mt-10" delay={200}>
             <p className="font-sans text-sm md:text-base text-[#5F6368] font-normal leading-relaxed mb-6">
-              Há mais de 6 anos, atuo com empresas de diferentes setores no Brasil, criando sites, produtos digitais e automações que ajudam negócios a crescer.
+              Há mais de 6 anos, atuo com empresas de diferentes setores no Brasil, criando sites, produtos digitais e processos automatizados que ajudam negócios a crescer.
             </p>
             <Link 
               href="#portfolio" 
@@ -209,7 +209,15 @@ export default function Experience() {
 }
 
 
-function ExperienceCard({ item, isBottomRowDesktop, isLastInRowDesktop, isBottomRowTablet, isLastInRowTablet }: any) {
+interface ExperienceCardProps {
+  item: Evidence
+  isBottomRowDesktop: boolean
+  isLastInRowDesktop: boolean
+  isBottomRowTablet: boolean
+  isLastInRowTablet: boolean
+}
+
+function ExperienceCard({ item, isBottomRowDesktop, isLastInRowDesktop, isBottomRowTablet, isLastInRowTablet }: ExperienceCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState(false);
 

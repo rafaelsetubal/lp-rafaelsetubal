@@ -38,7 +38,7 @@ export default function Header() {
             href={whatsappUrl()} target="_blank" rel="noopener noreferrer"
             className="btn-primary-blue inline-flex items-center justify-center text-xs sm:text-sm px-5 py-2.5 font-medium"
           >
-            Solicitar orçamento →
+            Conversar sobre meu site →
           </Link>
         </div>
 

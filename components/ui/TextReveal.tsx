@@ -69,7 +69,6 @@ export default function TextReveal({
         // white → inverted → original
         // Dark word: white → blue → black
         // Accent word: white → black → blue
-        const invertedColor = isAccent ? darkColor : accentColor
         const finalColor = isAccent ? accentColor : darkColor
 
         return (
@@ -111,7 +110,7 @@ function parseChildren(children: ReactNode): Segment[] {
       parts.forEach((part) => {
         if (/^\s+$/.test(part)) return // skip whitespace-only
         const words = part.split(" ")
-        words.forEach((word, idx) => {
+        words.forEach((word) => {
           if (!word) return
           segments.push({
             type: "word",
@@ -140,7 +139,11 @@ function parseChildren(children: ReactNode): Segment[] {
     }
 
     if (typeof node === "object" && "type" in node) {
-      const el = node as React.ReactElement<any>
+      const el = node as React.ReactElement<{
+        children?: ReactNode
+        className?: string
+        "data-accent"?: boolean
+      }>
 
       // Handle <br />
       if (el.type === "br") {
