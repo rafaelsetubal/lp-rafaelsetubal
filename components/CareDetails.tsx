@@ -67,7 +67,7 @@ export default function CareDetails({ label = "O que está incluído?" }: { labe
                 </p>
                 <h2 id={titleId} className="font-heading text-[1.8rem] md:text-[2.2rem] font-semibold leading-[1.05] tracking-[-0.03em] text-[#111111]">
                   Seu site no ar.<br />
-                  <span className="text-[#3D6AFF]">E bem cuidado.</span>
+                  <span className="text-[#3D6AFF] metallic-pulse-text">E bem cuidado.</span>
                 </h2>
                 <p className="mt-4 text-[0.9rem] leading-relaxed text-[#5F6368] font-sans font-normal md:max-w-[280px]">
                   Você pode deixar a parte técnica comigo e acompanhar o desempenho do site ao longo do tempo.

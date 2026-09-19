@@ -74,7 +74,7 @@ export default function TextReveal({
         return (
           <span
             key={i}
-            className="inline-block transition-colors"
+            className={`inline-block transition-colors ${seg.isMetallic ? "metallic-pulse-text" : ""}`}
             style={{
               color: isVisible ? finalColor : "transparent",
               textShadow: isVisible ? "none" : "none",
@@ -96,13 +96,14 @@ interface Segment {
   type: "word" | "br"
   text: string
   isAccent: boolean
+  isMetallic: boolean
   trailingSpace: boolean
 }
 
 function parseChildren(children: ReactNode): Segment[] {
   const segments: Segment[] = []
 
-  function walk(node: ReactNode, accent: boolean) {
+  function walk(node: ReactNode, accent: boolean, metallic = false) {
     if (node === null || node === undefined) return
 
     if (typeof node === "string") {
@@ -116,6 +117,7 @@ function parseChildren(children: ReactNode): Segment[] {
             type: "word",
             text: word,
             isAccent: accent,
+            isMetallic: metallic,
             trailingSpace: true,
           })
         })
@@ -128,13 +130,14 @@ function parseChildren(children: ReactNode): Segment[] {
         type: "word",
         text: String(node),
         isAccent: accent,
+        isMetallic: metallic,
         trailingSpace: true,
       })
       return
     }
 
     if (Array.isArray(node)) {
-      node.forEach((child) => walk(child, accent))
+      node.forEach((child) => walk(child, accent, metallic))
       return
     }
 
@@ -147,7 +150,7 @@ function parseChildren(children: ReactNode): Segment[] {
 
       // Handle <br />
       if (el.type === "br") {
-        segments.push({ type: "br", text: "", isAccent: false, trailingSpace: false })
+        segments.push({ type: "br", text: "", isAccent: false, isMetallic: false, trailingSpace: false })
         return
       }
 
@@ -157,7 +160,9 @@ function parseChildren(children: ReactNode): Segment[] {
         (el.props && el.props["data-accent"]) ||
         (el.props?.className && /text-\[#3D6AFF\]|text-brand|text-blue/.test(el.props.className))
 
-      walk(el.props?.children, accent || !!isAccentEl)
+      const isMetallicEl = !!el.props?.className?.includes("metallic-pulse-text")
+
+      walk(el.props?.children, accent || !!isAccentEl, metallic || isMetallicEl)
     }
   }
 

@@ -20,7 +20,7 @@ export default function Process() {
           <p className="eyebrow">Você fala direto com quem faz</p>
           <h2 className="font-heading text-[2.5rem] sm:text-5xl lg:text-[3.4rem] font-semibold tracking-[-.04em] leading-[1.04]">
             <TextReveal>
-              Sua ideia.<br />Um caminho claro.<br /><span className="text-[#3D6AFF]">Seu site no ar.</span>
+              Sua ideia.<br />Um caminho claro.<br /><span className="text-[#3D6AFF] metallic-pulse-text">Seu site no ar.</span>
             </TextReveal>
           </h2>
           <p className="mt-5 text-[#5F6368] leading-relaxed max-w-sm">Do primeiro contato à publicação, você sabe o que acontece e qual é o próximo passo.</p>

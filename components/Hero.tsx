@@ -71,7 +71,7 @@ export default function Hero() {
           <TextReveal>
             <span className="block">Seu negócio merece</span>
             <span className="block">ser encontrado.</span>
-            <span className="block text-[#3D6AFF]">E bem apresentado.</span>
+            <span className="block text-[#3D6AFF] metallic-pulse-text">E bem apresentado.</span>
           </TextReveal>
         </h1>
 

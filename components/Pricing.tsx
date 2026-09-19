@@ -26,7 +26,7 @@ export default function Pricing() {
           <Reveal className="md:col-span-7">
             <p className="eyebrow">Investimento</p>
             <h2 className="section-title">
-              <TextReveal>Quanto custa<br /><span className="text-[#3D6AFF]">um site?</span></TextReveal>
+              <TextReveal>Quanto custa<br /><span className="text-[#3D6AFF] metallic-pulse-text">um site?</span></TextReveal>
             </h2>
           </Reveal>
           <Reveal className="md:col-span-5" delay={200}>

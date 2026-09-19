@@ -111,7 +111,7 @@ export default function Experience() {
             <h2 className="font-heading text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] font-semibold tracking-[-0.03em] leading-[1.0] text-[#111111]">
               <TextReveal>
                 Projetos que fazem parte<br />
-                de <span className="text-[#3D6AFF]">negócios reais.</span>
+                de <span className="text-[#3D6AFF] metallic-pulse-text">negócios reais.</span>
               </TextReveal>
             </h2>
           </Reveal>

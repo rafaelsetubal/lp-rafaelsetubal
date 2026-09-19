@@ -69,6 +69,8 @@ h1, h2, h3, .font-heading {
 /* Button & interactive styles */
 .btn-primary-blue {
   background-color: #3D6AFF;
+  background-image: linear-gradient(100deg, #244fc9 12%, #3d6aff 38%, #a4bdff 49%, #3d6aff 62%, #244fc9 88%);
+  background-size: 220% auto;
   color: #ffffff;
   font-family: var(--font-sans);
   border-radius: 9999px;
@@ -76,6 +78,7 @@ h1, h2, h3, .font-heading {
   overflow: hidden;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3), 0 4px 14px rgba(61, 106, 255, 0.28);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: price-shimmer 5s ease-in-out infinite;
 }
 
 .btn-primary-blue:hover {
@@ -160,6 +163,7 @@ h1, h2, h3, .font-heading {
 .faq-summary::-webkit-details-marker { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .metallic-pulse-text { animation: none; background: none; -webkit-text-fill-color: #315ce6; filter: none; }
+  .btn-primary-blue { animation: none; background-image: none; }
 }
 
 /* WhatsApp floating button glow */
