@@ -161,3 +161,9 @@ h1, h2, h3, .font-heading {
 @media (prefers-reduced-motion: reduce) {
   .metallic-pulse-text { animation: none; background: none; -webkit-text-fill-color: #315ce6; filter: none; }
 }
+
+/* WhatsApp floating button glow */
+@keyframes waPulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(1.45); }
+}
