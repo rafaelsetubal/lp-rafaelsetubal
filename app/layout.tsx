@@ -50,6 +50,15 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "ykhpfcjz0q");
           `}
         </Script>
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-1XF2X13TZM" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-1XF2X13TZM');
+          `}
+        </Script>
         <MetaPixel />
         {children}
       </body>
