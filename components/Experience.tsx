@@ -18,6 +18,7 @@ interface Evidence {
   sourceText: string
   sourceUrl: string
   videoUrl?: string
+  backgroundImageUrl?: string
 }
 
 const evidences: Evidence[] = [
@@ -91,7 +92,8 @@ const evidences: Evidence[] = [
     isGrowth: false,
     description: "Projeto de automação e transformação digital para o Sicredi.",
     sourceText: "Zallpy",
-    sourceUrl: "https://zallpy.com/cases/sicredi"
+    sourceUrl: "https://zallpy.com/cases/sicredi",
+    backgroundImageUrl: "/projects/sicredi-zallpy.png"
   }
 ]
 
@@ -245,14 +247,24 @@ function ExperienceCard({ item, isBottomRowDesktop, isLastInRowDesktop, isBottom
         ${!isLastInRowTablet ? 'md:max-lg:border-r' : ''}
       `}
     >
-      {/* Vídeo Hover Background com Overlay Escuro */}
-      {item.videoUrl && (
+      {/* Fundo visual no hover/toque */}
+      {(item.videoUrl || item.backgroundImageUrl) && (
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-100 max-md:group-data-[active=true]:opacity-100">
-          <video 
-            src={item.videoUrl}
-            className="absolute inset-0 w-full h-full object-cover"
-            autoPlay loop muted playsInline
-          />
+          {item.videoUrl ? (
+            <video 
+              src={item.videoUrl}
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay loop muted playsInline
+            />
+          ) : (
+            <Image
+              src={item.backgroundImageUrl!}
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 33vw"
+              className="object-cover object-top"
+            />
+          )}
           {/* Overlay escuro para garantir leitura do texto branco */}
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
