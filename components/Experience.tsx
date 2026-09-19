@@ -102,7 +102,7 @@ export default function Experience() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 mb-20 md:mb-24 items-start">
           <Reveal className="md:col-span-7 lg:col-span-8">
             <span className="font-sans text-[0.72rem] md:text-[0.78rem] uppercase tracking-[0.16em] text-[#7F8792] font-medium block mb-5">
-              Experiência em contextos reais
+              6 anos transformando desafios digitais em resultados
             </span>
             <h2 className="font-heading text-[2.5rem] sm:text-[3rem] md:text-[3.5rem] font-semibold tracking-[-0.03em] leading-[1.0] text-[#111111]">
               <TextReveal>
@@ -113,13 +113,13 @@ export default function Experience() {
           </Reveal>
           <Reveal className="md:col-span-5 lg:col-span-4 md:pl-8 md:border-l md:border-[rgba(17,17,17,0.08)] mt-2 md:mt-10" delay={200}>
             <p className="font-sans text-sm md:text-base text-[#5F6368] font-normal leading-relaxed mb-6">
-              Sites, produtos digitais e experiências que desenvolvi ou dos quais participei, em empresas de diferentes setores e escalas.
+              Há mais de 6 anos, atuo com empresas de diferentes setores no Brasil, criando sites, produtos digitais e automações que ajudam negócios a crescer.
             </p>
             <Link 
               href="#portfolio" 
               className="font-sans text-[0.8rem] md:text-[0.85rem] font-medium text-[#3D6AFF] tracking-wide uppercase flex items-center gap-1.5 hover:text-[#2F59E8] transition-colors"
             >
-              Ver todas as referências 
+              Conheça os projetos e parcerias
               <span className="text-lg leading-none mb-[2px]">→</span>
             </Link>
           </Reveal>
