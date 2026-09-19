@@ -8,6 +8,8 @@ import { heroShowcaseProjects } from "@/lib/projects-data"
 
 import CareDetails from "./CareDetails"
 import { whatsappUrl } from "@/lib/contact"
+import Reveal from "./ui/Reveal"
+import TextReveal from "./ui/TextReveal"
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -58,90 +60,95 @@ export default function Hero() {
       <div className="max-w-[1280px] mx-auto px-6 relative z-10">
 
         {/* ================= 1. EYEBROW ================= */}
-        <div className="text-center">
+        <Reveal className="text-center">
           <span className="font-sans text-[0.72rem] md:text-[0.78rem] uppercase tracking-[0.16em] text-[#8A8F98] font-medium block mb-4">
             Sites que impulsionam negócios
           </span>
-        </div>
+        </Reveal>
 
         {/* ================= 2. HEADLINE ================= */}
         <h1 className="font-heading text-[2.625rem] sm:text-[3.25rem] md:text-[3.75rem] lg:text-[4rem] font-semibold tracking-[-0.035em] leading-[0.98] text-center text-[#111111] max-w-4xl mx-auto">
-          <span className="block">Seu negócio merece</span>
-          <span className="block">ser encontrado.</span>
-          <span className="block text-[#3D6AFF]">E bem apresentado.</span>
+          <TextReveal>
+            <span className="block">Seu negócio merece</span>
+            <span className="block">ser encontrado.</span>
+            <span className="block text-[#3D6AFF]">E bem apresentado.</span>
+          </TextReveal>
         </h1>
 
         {/* ================= 3. SUBHEADLINE ================= */}
-        <p className="font-sans mt-6 text-base sm:text-lg md:text-[1.0625rem] text-[#5F6368] max-w-[600px] mx-auto text-center leading-[1.48] font-normal">
-          Crio sites que explicam o valor da sua empresa, ampliam sua presença além das redes sociais e facilitam o próximo contato. Do planejamento ao acompanhamento, você fala comigo.
-        </p>
+        <Reveal delay={250}>
+          <p className="font-sans mt-6 text-base sm:text-lg md:text-[1.0625rem] text-[#5F6368] max-w-[600px] mx-auto text-center leading-[1.48] font-normal">
+            Crio sites que explicam o valor da sua empresa, ampliam sua presença além das redes sociais e facilitam o próximo contato. Do planejamento ao acompanhamento, você fala comigo.
+          </p>
+        </Reveal>
 
-        {/* ================= 4. THREE OFFERS / PRICES IN ONE HORIZONTAL ROW ================= */}
-        <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14">
+        <Reveal delay={350}>
+          <div className="mt-8 md:mt-10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-14">
 
-          {/* Offer 1 */}
-          <div className="text-center min-w-[120px]">
-            <span className="font-sans block text-xs md:text-[0.82rem] font-medium text-[#111111]">
-              Landing Page
-            </span>
-            <span className="font-sans block text-[0.68rem] text-[#8A8F98] font-normal mt-0.5">
-              a partir de
-            </span>
-            <span className="font-heading block text-lg sm:text-xl md:text-[1.35rem] font-semibold text-[#111111] tracking-tight mt-0.5">
-              R$ 700
-            </span>
+            {/* Offer 1 */}
+            <div className="text-center min-w-[120px]">
+              <span className="font-sans block text-xs md:text-[0.82rem] font-medium text-[#111111]">
+                Landing Page
+              </span>
+              <span className="font-sans block text-[0.68rem] text-[#8A8F98] font-normal mt-0.5">
+                a partir de
+              </span>
+              <span className="font-heading block text-lg sm:text-xl md:text-[1.35rem] font-semibold text-[#111111] tracking-tight mt-0.5">
+                R$ 700
+              </span>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden sm:block w-[1px] h-10 bg-neutral-200/90" />
+
+            {/* Offer 2 */}
+            <div className="text-center min-w-[120px]">
+              <span className="font-sans block text-xs md:text-[0.82rem] font-medium text-[#111111]">
+                Site Institucional
+              </span>
+              <span className="font-sans block text-[0.68rem] text-[#8A8F98] font-normal mt-0.5">
+                a partir de
+              </span>
+              <span className="font-heading block text-lg sm:text-xl md:text-[1.35rem] font-semibold text-[#111111] tracking-tight mt-0.5">
+                R$ 2.000
+              </span>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden sm:block w-[1px] h-10 bg-neutral-200/90" />
+
+            {/* Offer 3 */}
+            <div className="text-center min-w-[120px]">
+              <span className="font-sans block text-xs md:text-[0.82rem] font-medium text-[#111111]">
+                Projeto Específico
+              </span>
+              <span className="font-sans block text-[0.68rem] text-[#8A8F98] font-normal mt-0.5">
+                escopo personalizado
+              </span>
+              <span className="font-heading block text-lg sm:text-xl md:text-[1.35rem] font-semibold text-[#111111] tracking-tight mt-0.5">
+                Sob consulta
+              </span>
+            </div>
           </div>
 
-          {/* Divider */}
-          <div className="hidden sm:block w-[1px] h-10 bg-neutral-200/90" />
-
-          {/* Offer 2 */}
-          <div className="text-center min-w-[120px]">
-            <span className="font-sans block text-xs md:text-[0.82rem] font-medium text-[#111111]">
-              Site Institucional
-            </span>
-            <span className="font-sans block text-[0.68rem] text-[#8A8F98] font-normal mt-0.5">
-              a partir de
-            </span>
-            <span className="font-heading block text-lg sm:text-xl md:text-[1.35rem] font-semibold text-[#111111] tracking-tight mt-0.5">
-              R$ 2.000
-            </span>
+          <p className="mt-5 text-center text-xs text-[#5F6368]">Landing page: + R$ 100/mês. Institucional: + R$ 250/mês. Domínio à parte.</p>
+          <div className="text-center"><CareDetails label="Entenda o cuidado mensal" /></div>
+          {/* ================= 5. CTAS ================= */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+            <Link
+              href={whatsappUrl()} target="_blank" rel="noopener noreferrer"
+              className="btn-primary-blue inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-medium tracking-tight shadow-md"
+            >
+              Conversar sobre meu site →
+            </Link>
+            <Link
+              href="#portfolio"
+              className="btn-secondary-white inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-medium tracking-tight"
+            >
+              Ver projetos
+            </Link>
           </div>
-
-          {/* Divider */}
-          <div className="hidden sm:block w-[1px] h-10 bg-neutral-200/90" />
-
-          {/* Offer 3 */}
-          <div className="text-center min-w-[120px]">
-            <span className="font-sans block text-xs md:text-[0.82rem] font-medium text-[#111111]">
-              Projeto Específico
-            </span>
-            <span className="font-sans block text-[0.68rem] text-[#8A8F98] font-normal mt-0.5">
-              escopo personalizado
-            </span>
-            <span className="font-heading block text-lg sm:text-xl md:text-[1.35rem] font-semibold text-[#111111] tracking-tight mt-0.5">
-              Sob consulta
-            </span>
-          </div>
-        </div>
-
-        <p className="mt-5 text-center text-xs text-[#5F6368]">Landing page: + R$ 100/mês. Institucional: + R$ 250/mês. Domínio à parte.</p>
-        <div className="text-center"><CareDetails label="Entenda o cuidado mensal" /></div>
-        {/* ================= 5. CTAS ================= */}
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
-          <Link
-            href={whatsappUrl()} target="_blank" rel="noopener noreferrer"
-            className="btn-primary-blue inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-medium tracking-tight shadow-md"
-          >
-            Conversar sobre meu site →
-          </Link>
-          <Link
-            href="#portfolio"
-            className="btn-secondary-white inline-flex items-center justify-center px-8 py-3.5 text-sm sm:text-base font-medium tracking-tight"
-          >
-            Ver projetos
-          </Link>
-        </div>
+        </Reveal>
 
         {/* ================= 6. TRUST BADGES ================= */}
         <div className="font-sans mt-6 flex flex-wrap items-center justify-center gap-4 sm:gap-7 text-xs sm:text-sm text-[#5F6368] font-medium">
